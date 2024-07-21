@@ -7,14 +7,12 @@ A simple Rock Paper Scissors game implemented with HTML, CSS, and JavaScript. Th
 - **Interactive Game**: Clickable choices (Rock, Paper, Scissors) to play against the computer.
 - **Score Tracking**: Keeps track of the user's and computer's scores.
 - **Game Status**: Displays the result of each round and the final winner.
-- **Reset Button**: Allows users to reset the game and start fresh.
 
 ## Technologies Used
 
 - **HTML**: Structure of the game.
 - **CSS**: Styling for layout and design.
 - **JavaScript**: Game logic and interactions.
-- **Bootstrap**: Styling for buttons and layout.
 
 ## Getting Started
 
