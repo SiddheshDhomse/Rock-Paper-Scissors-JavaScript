@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rive Animation Example</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background-color: #f0f0f0;
+        }
+        canvas {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <!-- Canvas element where the Rive animation will be rendered -->
+    <canvas id="riveCanvas" width="800" height="600"></canvas>
+
+    <!-- Include the Rive JavaScript runtime -->
+    <script src="https://unpkg.com/@rive-app/canvas@latest"></script>
+
+    <script>
+        // Create a new Rive instance
+        const riveAnimation = new rive.Rive({
+            src: 'assets/untitled (2).riv',  // Path to your .riv file within the project
+            canvas: document.getElementById('riveCanvas'),  // Canvas element where the animation will be displayed
+            autoplay: true,  // Automatically play the animation on load
+            onLoad: () => {
+                console.log('Rive animation loaded successfully!');
+            },
+            onPlay: () => {
+                console.log('Rive animation is playing!');
+            },
+            onPause: () => {
+                console.log('Rive animation is paused!');
+            },
+            onStop: () => {
+                console.log('Rive animation is stopped!');
+            }
+        });
+
+        // Example: Controlling the animation after loading
+        function playAnimation() {
+            riveAnimation.play();
+        }
+
+        function pauseAnimation() {
+            riveAnimation.pause();
+        }
+
+        function stopAnimation() {
+            riveAnimation.stop();
+        }
+
+        // Example: Add event listeners to control the animation
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'p') {
+                playAnimation();
+            } else if (event.key === 's') {
+                stopAnimation();
+            } else if (event.key === 'u') {
+                pauseAnimation();
+            }
+        });
+    </script>
+</body>
+</html>
